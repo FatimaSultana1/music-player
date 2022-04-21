@@ -1,0 +1,35 @@
+<!-- Music used in the site does not belong to me all credits go to respective owners -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="player-container">
+        <div class="img-container">
+            <img src="img/jacinto-1.jpg" alt="image">
+        </div>
+        <h2 id="title">Who Says</h2>
+        <h3 id="artist">Selena Gomez</h3>
+        <audio src="music/mylist-1.mp3"></audio>
+        <div id="progress-container" class="progress-container">
+            <div id="progress" class="progress"></div>
+            <div class="duration-wrapper">
+                <span id="current-time">0:00</span>
+                <span id="duration">3:20</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
