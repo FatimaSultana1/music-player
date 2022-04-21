@@ -87,14 +87,17 @@ h3 {
   width: 200px;
 }
 
-.fas {
+.fa-solid {
   font-size: 30px;
   color: rgb(129, 129, 129);
   margin-right: 30px;
-
+  cursor: pointer;
+  user-select: none;
 }
 
-
+.fa-solid:hover {
+  filter: brightness(80%);
+}
 
 .main-button {
   font-size: 40px;
@@ -108,7 +111,7 @@ h3 {
   .player-container{
     width: 95vw;
   }
-  
+
   .img-container {
     left: 29px;
   }
