@@ -1,7 +1,34 @@
+const image = document.querySelector('img');
+const title = document.getElementById('title');
+const artist = document.getElementById('artist')
 const music = document.querySelector('audio');
 const prevBtn = document.getElementById('prev');
 const playBtn = document.getElementById('play');
 const nextBtn = document.getElementById('next');
+
+//Music
+const songs = [
+    {
+        name:'mylist-1',
+        displayName : 'Who Says',
+        artist : 'Selena Gomez',
+    },
+    {
+        name:'mylist-2',
+        displayName: 'Magic Shop',
+        artist:'BTS',
+    },
+    {
+        name:'mylist-3',
+        displayName: 'Fight Song',
+        artist:'Rachel Platten',
+    },
+    {
+        name:'mylist-4',
+        displayName: 'Bezos I',
+        artist:'Bo Burnham',
+    }
+];
 
 //Check if playing
 let isPlaying=false;
@@ -26,3 +53,29 @@ function pauseSong()
 
 //Play or Pause Event Listener
 playBtn.addEventListener('click', () => (isPlaying ? pauseSong(): playSong()));
+
+//Update Dom
+function loadSong(song) {
+    title.textContent=song.displayName;
+    artist.textContent=song.artist;
+    music.src=`music/${song.name}.mp3`;
+    image.src=`img/${song.name}.jpg`;
+}
+//Current song
+let songIndex=0;
+
+function prevSong(){
+    songIndex= Math.abs((songIndex+3)%songs.length) ;
+    loadSong(songs[songIndex]);  
+    playSong();
+}
+function nextSong(){
+    songIndex=(songIndex+1)%songs.length;
+    loadSong(songs[songIndex]);  
+    playSong();  
+}
+//On Load select first song
+loadSong(songs[songIndex]);
+
+prevBtn.addEventListener('click',prevSong);
+nextBtn.addEventListener('click',nextSong);
